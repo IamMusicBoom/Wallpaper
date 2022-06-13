@@ -211,7 +211,7 @@ public class LiveWallpaperService extends WallpaperService {
                 case MotionEvent.ACTION_UP:
                     float rawX = event.getRawX();
                     float rawY = event.getRawY();
-                    if (mWpPainter.mRealRect.contains(rawX, rawY)) {
+                    if (mWpPainter.mRealRect.contains(((int) rawX), ((int) rawY))) {
                         EmptyActivity.start(getApplicationContext());
                     }
                     break;

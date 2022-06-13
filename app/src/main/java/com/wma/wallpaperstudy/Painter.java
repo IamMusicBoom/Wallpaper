@@ -28,8 +28,8 @@ public class Painter {
     LinearGradient mShader;//渐变色
     public RectF mRect;//背景圆角矩形
     Path mPath;//圆角矩形
-    float mDistance = 30;//水平移动距离
-    public RectF mRealRect;//点击区域
+    int mDistance = 30;//水平移动距离
+    public Rect mRealRect;//点击区域
 
     public Painter(Context context) {
         this.mContext = context;
@@ -50,7 +50,7 @@ public class Painter {
         mRect = new RectF(mCenterP.x - (UISizeUtil.dpToPx(mContext, 45) / 2), mCenterP.y - (UISizeUtil.dpToPx(mContext, 45) / 2),
                 mCenterP.x + (UISizeUtil.dpToPx(mContext, 45) / 2), mCenterP.y + (UISizeUtil.dpToPx(mContext, 45) / 2));
 
-        mRealRect = new RectF(mCanvasCenterP.x - (UISizeUtil.dpToPx(mContext, 45) / 2), mCanvasCenterP.y - (UISizeUtil.dpToPx(mContext, 45) / 2)
+        mRealRect = new Rect(mCanvasCenterP.x - (UISizeUtil.dpToPx(mContext, 45) / 2), mCanvasCenterP.y - (UISizeUtil.dpToPx(mContext, 45) / 2)
                 , mCanvasCenterP.x + (UISizeUtil.dpToPx(mContext, 45) / 2), mCanvasCenterP.y + (UISizeUtil.dpToPx(mContext, 45) / 2));
         mPath = new Path();
     }

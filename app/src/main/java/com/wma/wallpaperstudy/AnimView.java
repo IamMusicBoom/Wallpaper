@@ -69,11 +69,11 @@ public class AnimView extends View {
 
     public void drawTranslate(){
 
-        mTranslateAnim = ValueAnimator.ofFloat(30, 0);
+        mTranslateAnim = ValueAnimator.ofInt(30, 0);
         mTranslateAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mWpPainter.mDistance = (float) animation.getAnimatedValue();
+                mWpPainter.mDistance = (int) animation.getAnimatedValue();
                 invalidate();
             }
         });

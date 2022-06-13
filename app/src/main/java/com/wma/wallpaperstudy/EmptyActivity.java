@@ -18,33 +18,57 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class EmptyActivity extends AppCompatActivity {
 
-    private AnimView mAnim;
-    private static final String OPTIMIZE_PAGE_FINISH = "OPTIMIZE_PAGE_FINISH";
-
     public static void start(Context context) {
         Intent intent = new Intent(context, EmptyActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mAnim.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mAnim.drawTranslate();
-            }
-        }, 200);
+//    private AnimView mAnim;
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        mAnim.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                mAnim.drawTranslate();
+//            }
+//        }, 200);
+//
+//    }
+//
+//    @Override
+//    protected void onCreate(@Nullable Bundle savedInstanceState) {
+//        overridePendingTransition(0, 0);
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_empty);
+//        mAnim = findViewById(R.id.anim_view);
+//        if (Build.VERSION.SDK_INT >= 21) {
+//            View decorView = getWindow().getDecorView();
+//            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+//            decorView.setSystemUiVisibility(option);
+//            getWindow().setStatusBarColor(Color.TRANSPARENT);
+//        }
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        mAnim.recycle();
+//
+//    }
 
-    }
+
+    private AnimViewGroup mAnim;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empty);
-        mAnim = findViewById(R.id.anim_view);
+        mAnim = findViewById(R.id.anim_view_group);
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
             int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -52,17 +76,12 @@ public class EmptyActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(option);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
+        mAnim.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mAnim.startAnim();
+            }
+        }, 200);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mAnim.recycle();
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
 }

@@ -3,10 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.wma.wallpaperstudy.AnimView
-        android:id="@+id/anim_view"
+<!--    <com.wma.wallpaperstudy.AnimView-->
+<!--        android:id="@+id/anim_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
+
+
+
+    <com.wma.wallpaperstudy.AnimViewGroup
+        android:id="@+id/anim_view_group"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

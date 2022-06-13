@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_root"
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+    android:background="@drawable/bg_left_radius">
+
+    <View
+        android:layout_width="36.5dp"
+        android:layout_height="36.5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_circle" />
+
+    <ImageView
+        android:id="@+id/iv_fan"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ac" />
+
+
+</FrameLayout>

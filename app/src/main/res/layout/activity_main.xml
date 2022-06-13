@@ -25,4 +25,12 @@
         android:text="取消壁纸" />
 
 
+
+        <ImageView
+            android:id="@+id/iv_fan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@mipmap/ac"/>
+
 </LinearLayout>

@@ -5,29 +5,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.animation.ObjectAnimator;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final int REQUEST_WALLPAPER = 0;
+    private ImageView mIvFan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 50);
+        mIvFan = findViewById(R.id.iv_fan);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        ObjectAnimator translationX = ObjectAnimator.ofFloat(mIvFan, "translationX", 500);
+
 
 
     }
